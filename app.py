@@ -345,7 +345,7 @@ def run_hadoop_pipeline(query):
     end_frame = int(target_frame + (clip_duration / 2) * fps)
 
     # Create a VideoWriter to save the extracted clip
-    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    fourcc = cv2.VideoWriter_fourcc(*'h264')  # Use 'h264' codec for compatibility
     clip_writer = cv2.VideoWriter('best_matching_clip.mp4', fourcc, fps, (int(cap.get(3)), int(cap.get(4))))
 
     # Extract and write frames within the specified time range
