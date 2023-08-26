@@ -268,7 +268,6 @@ tensorboard-data-server==0.7.0
 tensorflow==2.13.0
 tensorflow-estimator==2.13.0
 tensorflow-hub==0.14.0
-tensorflow-macos==2.13.0
 termcolor==2.3.0
 terminado==0.17.1
 testpath==0.6.0
