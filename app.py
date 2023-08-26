@@ -7,7 +7,7 @@ import torch
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
-import ffmpegcv
+#import ffmpegcv
 from tempfile import NamedTemporaryFile
 from io import BytesIO, StringIO
 from hdfs import InsecureClient
@@ -312,6 +312,7 @@ def run_hadoop_pipeline(query):
 
     best_matching_video_folder = best_matching_keyframe[:3]
     best_matching_video = best_matching_keyframe.split('/')[0]
+    '''
     # Input video path on HDFS
     video_path_hdfs = f"/AIChallenge/Videos/{best_matching_video_folder}/{best_matching_video}.mp4"
 
@@ -365,6 +366,7 @@ def run_hadoop_pipeline(query):
     clip_writer.release()
     st.video('best_matching_clip.mp4')
     # Update progress bar for stage 3
+    '''
     progress_stage.progress(100)
     progress_text.text("Done!")
     #st.text("Stage 3: Video extraction - Done")
