@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* styles.css */
+
+.border-highlight{
+    border: 4px dashed #e64d2c;  
+    padding:0.03em 0.25em;
+    background-color: #472217;
+}
+
+
+.highlight-container, .highlight {
+    position: relative;
+}
+
+.highlight-container {
+    display: inline-block;
+}
+.highlight-container:before {
+    content: " ";
+    display: block;
+    height: 90%;
+    width: 100%;
+    margin-left: -3px;
+    margin-right: -3px;
+    position: absolute;
+    background: #ffd500;
+    transform: rotate(2deg);
+    top: -1px;
+    left: -1px;
+    border-radius: 20% 25% 20% 24%;
+    padding: 10px 3px 3px 10px;
+}
+
+.title-word {
+    animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+    --color-1: #e69e76;
+    --color-2: #d1d5b1;
+    --color-3: #f2dc86;
+}
+
+.title-word-2 {
+    --color-1: #f2dc86;
+    --color-2: #e69e76;
+    --color-3: #d1d5b1;
+}
+
+.title-word-3 {
+    --color-1: #d1d5b1;
+    --color-2: #f2dc86;
+    --color-3: #e69e76;
+}
+
+.title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+}
