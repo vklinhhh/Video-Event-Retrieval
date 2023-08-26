@@ -7,7 +7,7 @@ import torch
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
-import cv2
+import ffmpegcv
 from tempfile import NamedTemporaryFile
 from io import BytesIO, StringIO
 from hdfs import InsecureClient
@@ -329,7 +329,7 @@ def run_hadoop_pipeline(query):
         temp_file_path = temp_file.name
 
     # Open the downloaded local video file
-    cap = cv2.VideoCapture(temp_file_path)
+    cap = ffmpegcv.VideoCapture(temp_file_path)
 
     # Frame pts_time to center the clip around
     target_pts_time = keyframe_pts_mapping.get(best_matching_keyframe)
@@ -345,8 +345,7 @@ def run_hadoop_pipeline(query):
     end_frame = int(target_frame + (clip_duration / 2) * fps)
 
     # Create a VideoWriter to save the extracted clip
-    fourcc = cv2.VideoWriter_fourcc(*'h264')  # Use 'h264' codec for compatibility
-    clip_writer = cv2.VideoWriter('best_matching_clip.mp4', fourcc, fps, (int(cap.get(3)), int(cap.get(4))))
+    clip_writer = ffmpegcv.VideoWriter('best_matching_clip_2.mp4', fps)
 
     # Extract and write frames within the specified time range
     frame_number = 0
