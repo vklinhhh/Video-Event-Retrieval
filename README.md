@@ -33,10 +33,11 @@ This repository contains a video event retrieval system tailored specifically fo
 -   `base64, BytesIO, StringIO`: Handling binary data.
 -   `tempfile`: Managing temporary files and directories.
 -   `hdfs`: Interacting with Hadoop Distributed File System (HDFS).
+-   `streamlit` : Deploying the application.
 
 ## Installation and Usage
 1. Clone the repository.
 2. Install the required dependencies.
 3. Run `keyframe_features.py` to extract keyframe features.
 4. Configure the HDFS connection (remember to change the connection id in file `app.py`).
-5. Run the application (`app.py`) and input Vietnamese text queries for video retrieval.
+5. Run the application (`streamlit run app.py`) and input Vietnamese text queries for video retrieval.
